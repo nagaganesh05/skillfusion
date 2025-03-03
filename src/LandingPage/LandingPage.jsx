@@ -1,6 +1,6 @@
 
 import React from 'react';
-// import logo from './assets/logo.png'
+
 
 function LandingPage() {
 
@@ -192,7 +192,7 @@ function LandingPage() {
                         className={`bg-${testimonial.color} rounded-circle me-3`}
                         style={{ width: '50px', height: '50px' }}
                       >
-                        {/* Avatar placeholder */}
+                        
                       </div>
                       <div>
                         <h6 className="mb-0 fw-bold">{testimonial.name}</h6>
