@@ -1,0 +1,26 @@
+.meeting-card {
+    width: 100%;
+    max-width: 18rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .meeting-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-image-wrapper {
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-img {
+    height: 120px;
+    object-fit: contain;
+    width: 100%;
+  }
+  
