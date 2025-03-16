@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const CreateMeetingsButtons = ({ isEdit = false, closeFlyout }) => {
+const CreateMeetingsButtons = ({ isEdit = false, closeFlyout, createMeeting }) => {
   const navigate = useNavigate();
 
   const handleCancel = () => {
@@ -22,7 +22,7 @@ const CreateMeetingsButtons = ({ isEdit = false, closeFlyout }) => {
         </Button>
       </Col>
       <Col xs="auto">
-        <Button type="submit">
+        <Button type="button" variant="primary" onClick={createMeeting}>
           {isEdit ? 'Edit Meeting' : 'Create Meeting'}
         </Button>
       </Col>
@@ -31,4 +31,3 @@ const CreateMeetingsButtons = ({ isEdit = false, closeFlyout }) => {
 };
 
 export default CreateMeetingsButtons;
-

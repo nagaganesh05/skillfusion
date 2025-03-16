@@ -1,8 +1,6 @@
 // src/store/authSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-
-
 const initialState = {
   userInfo: undefined,
   isDarkTheme: false,
