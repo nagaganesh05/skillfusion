@@ -7,7 +7,7 @@ import { firebaseAuth } from '../Firebase/FirebaseConfig';
 import { Container, Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
 import { BsSunFill, BsMoonStarsFill } from 'react-icons/bs';
 import { changeTheme } from '../Redux/Slices/Authslice';
-import { getCreateMeetingBreadCrumbs, getVideoConferenceBreadCrumbs } from '../Firebase/BreadCrumbs';
+import { getCreateMeetingBreadCrumbs, getMeetingsBreadCrumbs, getMyMettingsBreadCrumbs, getVideoConferenceBreadCrumbs } from '../Firebase/BreadCrumbs';
 import OneonOnebreadCrumb from '../Firebase/OneonOneBreadCrumb';
 
 const Header = () => {
@@ -39,6 +39,10 @@ const Header = () => {
       setBreadCrumbs(OneonOnebreadCrumb(navigate))
     } else if(pathname === '/videoconference'){
       setBreadCrumbs(getVideoConferenceBreadCrumbs(navigate))
+    }else if(pathname==='/mymeetings'){
+      setBreadCrumbs(getMyMettingsBreadCrumbs(navigate))
+    }else if(pathname==='/meetings'){
+      setBreadCrumbs(getMeetingsBreadCrumbs(navigate))
     }
     else {
       setBreadCrumbs([]); 

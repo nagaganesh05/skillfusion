@@ -167,7 +167,7 @@ const VideoConference = () => {
 
                             <MeetingDateField selected={startDate} setStartDate={setStartDate} />
 
-                            <CreateMeetingsButtons isEdit={false} />
+                            <CreateMeetingsButtons isEdit={false} createMeeting={createMeeting}/>
                         </Form>
                     </Col>
                 </Row>

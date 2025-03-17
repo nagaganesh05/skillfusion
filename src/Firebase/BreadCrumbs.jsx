@@ -28,3 +28,31 @@ export const getVideoConferenceBreadCrumbs = (navigate) => [
     text: "Create Video Conference",
   },
 ];
+
+export const getMyMettingsBreadCrumbs = (navigate) => [
+  {
+    text: "Dashboard",
+    href: "#",
+    onClick: (e) => {
+      e.preventDefault();
+      navigate("/dashboard");
+    },
+  },
+  {
+    text: "My Meetings",
+  },
+];
+
+export const getMeetingsBreadCrumbs = (navigate) => [
+  {
+    text: "Dashboard",
+    href: "#",
+    onClick: (e) => {
+      e.preventDefault();
+      navigate("/dashboard");
+    },
+  },
+  {
+    text: "Meetings",
+  },
+];

@@ -10,6 +10,8 @@ import { setToasts } from './Redux/slices/MeetingSlice';
 import { Toast, ToastContainer } from 'react-bootstrap';
 import VideoConference from './Pages/VideoConference';
 import Mymeetings from './Pages/Mymeetings';
+import Meeting from './Pages/Meeting';
+import JoinMeeting from './Pages/JoinMeeting';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -51,6 +53,8 @@ export default function App() {
           <Route path="/create1on1" element={<OneOnOneMeeting />} />
           <Route path='/videoconference' element={<VideoConference/>}/>
           <Route path='/mymeetings' element={<Mymeetings/>}/>
+          <Route path='/meetings' element={<Meeting/>} />
+          <Route path='/join/:id' element={<JoinMeeting/>} />  
           <Route path="*" element={<Login />} />
         </Routes>
 
