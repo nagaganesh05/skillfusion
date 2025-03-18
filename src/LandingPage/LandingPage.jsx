@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 function LandingPage() {
   return (
     <div className="skill-fusion-app">
@@ -27,7 +28,8 @@ function LandingPage() {
             </ul>
             <div className="ms-3 d-flex">
 {/*               <button className="btn btn-outline-light me-2">Login</button> */}
-              <button className="btn btn-primary">Sign Up</button>
+<Link to='/login'><button className="btn btn-primary">Sign Up</button></Link>
+              
             </div>
           </div>
         </div>
@@ -209,7 +211,8 @@ function LandingPage() {
           <h2 className="display-5 fw-bold mb-4">Ready to Start Your Learning Journey?</h2>
           <p className="lead mb-4">Join Skill Fusion today and connect with expert instructors for personalized learning</p>
           <div className="d-flex justify-content-center gap-3 flex-wrap">
-            <button className="btn btn-light btn-lg">Sign Up Now</button>
+            <Link to='/login'><button className="btn btn-primary btn-lg btn-outline-light">Sign Up</button></Link>
+
             <button className="btn btn-outline-light btn-lg">Learn More</button>
           </div>
         </div>

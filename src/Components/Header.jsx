@@ -7,7 +7,7 @@ import { firebaseAuth } from '../Firebase/FirebaseConfig';
 import { Container, Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
 import { BsSunFill, BsMoonStarsFill } from 'react-icons/bs';
 import { changeTheme } from '../Redux/Slices/Authslice';
-import { getCreateMeetingBreadCrumbs, getMeetingsBreadCrumbs, getMyMettingsBreadCrumbs, getVideoConferenceBreadCrumbs } from '../Firebase/BreadCrumbs';
+import { getCreateMeetingBreadCrumbs,getMeetingsBreadCrumbs, getMyMettingsBreadCrumbs, getVideoConferenceBreadCrumbs } from '../Firebase/BreadCrumbs';
 import OneonOnebreadCrumb from '../Firebase/OneonOneBreadCrumb';
 
 const Header = () => {
@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <>
       
-      <Navbar bg={isDarkTheme ? 'dark' : 'light'} variant={isDarkTheme ? 'dark' : 'light'} expand="lg">
+      <Navbar bg={isDarkTheme ? 'dark' : 'light'} variant={isDarkTheme ? 'dark' : 'light'}  expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <h2 style={{ color: '#0b5cff', margin: 0 }}>Skillfusion</h2>
