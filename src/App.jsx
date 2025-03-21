@@ -7,7 +7,8 @@ import OneOnOneMeeting from './Pages/OneOnOneMeeting';
 import ThemeSelector from './Components/ThemeSelector';
 import { useAppDispatch, useAppSelector } from './Redux/Hooks';
 // import { setToasts } from './Redux/Slices/MeetingSlice';
-// import { Toast, ToastContainer } from 'react-bootstrap';
+import { setToasts } from './Redux/slices/MeetingSlice';
+import { Toast, ToastContainer } from 'react-bootstrap';
 import VideoConference from './Pages/VideoConference';
 import Mymeetings from './Pages/Mymeetings';
 import Meeting from './Pages/Meeting';
@@ -32,17 +33,17 @@ export default function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const newTheme = isDarkTheme ? 'dark' : 'light';
-  //   setTheme(newTheme);
-  //   localStorage.setItem('skill-theme', newTheme);
-  //   document.body.className = newTheme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark';
-  // }, [isDarkTheme]);
+  useEffect(() => {
+    const newTheme = isDarkTheme ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('skill-theme', newTheme);
+    document.body.className = newTheme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark';
+  }, [isDarkTheme]);
 
-  // const removeToast = (toastId) => {
-  //   const updatedToasts = toasts.filter((toast) => toast.id !== toastId);
-  //   dispatch(setToasts(updatedToasts));
-  // };
+  const removeToast = (toastId) => {
+    const updatedToasts = toasts.filter((toast) => toast.id !== toastId);
+    dispatch(setToasts(updatedToasts));
+  };
 
   return (
     <>
@@ -60,7 +61,7 @@ export default function App() {
           <Route path="*" element={<Login />} />
         </Routes>
 
-        {/* <ToastContainer position="bottom-end" className="p-3">
+        <ToastContainer position="bottom-end" className="p-3">
           {toasts.map((toast) => (
             <Toast key={toast.id} onClose={() => removeToast(toast.id)} bg={toast.color || 'primary'}>
               <Toast.Header closeButton>
@@ -71,7 +72,7 @@ export default function App() {
               )}
             </Toast>
           ))}
-        </ToastContainer> */}
+        </ToastContainer>
       </ThemeSelector>
     </>
   );
