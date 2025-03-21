@@ -24,5 +24,5 @@ const MeetingSlice = createSlice({
   },
 });
 
-export const { setToasts, addToast, removeToast, clearToasts } = MeetingSlice.actions;
+export  const{ setToasts, addToast, removeToast, clearToasts } = MeetingSlice.actions;;
 export default MeetingSlice.reducer; 
