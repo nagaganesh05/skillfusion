@@ -198,7 +198,7 @@ const Meeting = () => {
   }, [userInfo]);
 
   const copyLink = (meetingId) => {
-    const link = `${import.meta.env.VITE_APP_HOST}/join/${meetingId}`;
+    const link = `${window.location.origin}/join/${meetingId}`;
     navigator.clipboard.writeText(link);
     alert('Meeting link copied!');
   };

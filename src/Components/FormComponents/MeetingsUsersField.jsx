@@ -64,11 +64,15 @@ const MeetingUserField = ({
   selectedOptions,
   isClearable = true,
   placeholder = '-- Select an option --',
-  multiple = false
+  multiple = true
 }) => {
+  // const value = multiple
+  //   ? selectedOptions?.map((user) => user.uid) || []
+  //   : selectedOptions?.uid || '';
+
   const value = multiple
-    ? selectedOptions?.map((user) => user.uid) || []
-    : selectedOptions?.uid || '';
+  ? (selectedOptions || []).map((user) => user.uid)
+  : selectedOptions?.uid || '';
 
   const handleChange = (e) => {
     const selectedValues = Array.from(e.target.selectedOptions).map(opt => opt.value);
@@ -79,12 +83,19 @@ const MeetingUserField = ({
   return (
     <Form.Group className="mb-3">
       <Form.Label>{label}</Form.Label>
-      <Form.Select
+      {/* <Form.Select
         multiple={multiple}
         value={value}
         onChange={handleChange}
         isInvalid={isInvalid}
-      >
+      > */}
+
+<Form.Select
+  multiple={multiple}
+  value={value}
+  onChange={handleChange}
+  isInvalid={isInvalid}
+>
         {isClearable && !multiple && (
           <option value="">{placeholder}</option>
         )}

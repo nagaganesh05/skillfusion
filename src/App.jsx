@@ -6,7 +6,6 @@ import CreateMeeting from './Pages/CreateMeeting';
 import OneOnOneMeeting from './Pages/OneOnOneMeeting';
 import ThemeSelector from './Components/ThemeSelector';
 import { useAppDispatch, useAppSelector } from './Redux/Hooks';
-// import { setToasts } from './Redux/Slices/MeetingSlice';
 import { setToasts } from './Redux/slices/MeetingSlice';
 import { Toast, ToastContainer } from 'react-bootstrap';
 import VideoConference from './Pages/VideoConference';
@@ -14,6 +13,7 @@ import Mymeetings from './Pages/Mymeetings';
 import Meeting from './Pages/Meeting';
 import JoinMeeting from './Pages/JoinMeeting';
 import LandingPage from './LandingPage/LandingPage';
+
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -50,7 +50,7 @@ export default function App() {
       <ThemeSelector>
         <Routes location={location}>
           <Route path='/' element={<LandingPage/>} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login/> } />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create" element={<CreateMeeting />} />
           <Route path="/create1on1" element={<OneOnOneMeeting />} />
