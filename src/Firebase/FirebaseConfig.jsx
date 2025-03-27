@@ -25,4 +25,4 @@ export const firebaseDB = getFirestore(app)
 
 export const usersRef = collection(firebaseDB, "users");
 export const meetingsRef = collection(firebaseDB, "meetings");
-export default firebaseConfig
+// export default firebaseConfig

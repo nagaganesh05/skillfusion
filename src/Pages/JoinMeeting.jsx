@@ -19,7 +19,6 @@ const JoinMeeting = () => {
   const [userLoaded, setUserLoaded] = useState(false);
   const meetingContainerRef = useRef(null);
 
-  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
       setUser(currentUser);
@@ -28,7 +27,6 @@ const JoinMeeting = () => {
     return () => unsubscribe();
   }, []);
 
-  
   useEffect(() => {
     const getMeetingData = async () => {
       if (id && userLoaded) {
@@ -38,14 +36,14 @@ const JoinMeeting = () => {
         if (!fetchedMeetings.empty) {
           const meeting = fetchedMeetings.docs[0].data();
           const isCreator = meeting.createdBy === user?.uid;
-          const today = moment().format('L');
+          const today = new Date().toISOString().split('T')[0]; // Ensures ISO 8601 format
 
           if (meeting.meetingType === '1-on-1') {
             const invitedUser = meeting.invitedUsers[0];
             if (invitedUser === user?.uid || isCreator) {
-              if (meeting.meetingDate === today) {
+              if (moment(meeting.meetingDate, "YYYY-MM-DD").isSame(today, 'day')) {
                 setIsAllowed(true);
-              } else if (moment(meeting.meetingDate).isBefore(today)) {
+              } else if (moment(meeting.meetingDate, "YYYY-MM-DD").isBefore(moment(today, "YYYY-MM-DD"))) {
                 createToast({ title: 'Meeting has ended.', type: 'danger' });
                 navigate(user ? '/dashboard' : '/login');
               } else {
@@ -59,9 +57,9 @@ const JoinMeeting = () => {
           } else if (meeting.meetingType === 'video-conference') {
             const isInvited = meeting.invitedUsers.includes(user?.uid);
             if (isInvited || isCreator) {
-              if (meeting.meetingDate === today) {
+              if (moment(meeting.meetingDate, "YYYY-MM-DD").isSame(today, 'day')) {
                 setIsAllowed(true);
-              } else if (moment(meeting.meetingDate).isBefore(today)) {
+              } else if (moment(meeting.meetingDate, "YYYY-MM-DD").isBefore(moment(today, "YYYY-MM-DD"))) {
                 createToast({ title: 'Meeting has ended.', type: 'danger' });
                 navigate(user ? '/dashboard' : '/');
               } else {
@@ -74,7 +72,7 @@ const JoinMeeting = () => {
             }
 
           } else {
-            setIsAllowed(true); 
+            setIsAllowed(true);
           }
         } else {
           navigate('/dashboard');
@@ -84,10 +82,7 @@ const JoinMeeting = () => {
 
     getMeetingData();
   }, [userLoaded, id, user, navigate]);
-  
-  // const baseUrl = "https://react-skillfusion.netlify.app";
 
-  
   useEffect(() => {
     if (isAllowed && meetingContainerRef.current && user) {
       const appId = 518910758;
@@ -131,8 +126,3 @@ const JoinMeeting = () => {
 };
 
 export default JoinMeeting;
-
-
-
-
-

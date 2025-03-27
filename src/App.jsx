@@ -13,6 +13,8 @@ import Mymeetings from './Pages/Mymeetings';
 import Meeting from './Pages/Meeting';
 import JoinMeeting from './Pages/JoinMeeting';
 import LandingPage from './LandingPage/LandingPage';
+import SignIn from './Pages/SignIn';
+import SignUp from './Pages/SignUp';
 
 
 export default function App() {
@@ -51,6 +53,8 @@ export default function App() {
         <Routes location={location}>
           <Route path='/' element={<LandingPage/>} />
           <Route path="/login" element={<Login/> } />
+          <Route path='signin' element={<SignIn/>}/>
+          <Route path='signup' element={<SignUp/>}/>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create" element={<CreateMeeting />} />
           <Route path="/create1on1" element={<OneOnOneMeeting />} />
@@ -61,7 +65,7 @@ export default function App() {
           <Route path="*" element={<Login />} />
         </Routes>
 
-        <ToastContainer position="bottom-end" className="p-3">
+        <ToastContainer position="top-center" className="p-3"  style={{zIndex:1050}}>
           {toasts.map((toast) => (
             <Toast key={toast.id} onClose={() => removeToast(toast.id)} bg={toast.color || 'primary'}>
               <Toast.Header closeButton>

@@ -40,7 +40,7 @@ const Dashboard = () => {
           {cards.map((card, index) => (
             <Col xs={12} md={4} key={index} className="d-flex justify-content-center">
               <Card
-                style={{ width: '100%', maxWidth: '18rem', cursor: 'pointer' }}
+                style={{ width: '100%', maxWidth: '18rem',cursor: 'pointer' }}
                 className="text-center shadow-sm"
                 onClick={card.onClick}
               >

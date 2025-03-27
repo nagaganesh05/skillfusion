@@ -62,13 +62,13 @@ const Header = () => {
       <Navbar bg={isDarkTheme ? 'dark' : 'light'} variant={isDarkTheme ? 'dark' : 'light'}  expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <h2 style={{ color: '#0b5cff', margin: 0 }}>Skillfusion</h2>
+            <h2 style={{ color: '#0b5cff', margin: 15 }}>Skillfusion</h2>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto align-items-center">
+            <Nav className="ms-auto align-items-center gap-4 justify-content-space-between">
               {username && (
-                <Nav.Item className="me-3 d-flex flex-row align-items-center gap-2">
+                <Nav.Item className="me-3 d-flex flex-row align-items-center gap-2 ">
                   <h5 className="mb-0">Hello</h5>
                   <h5 className="mb-0 fw-bold" style={{ color: isDarkTheme ? '#fff' : '#000' }}>
                     {username}

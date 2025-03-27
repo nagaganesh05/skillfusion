@@ -90,7 +90,8 @@ const OneOnOneMeeting = () => {
 
         createToast({
           title: 'One-on-One Meeting Created Successfully',
-          type: 'success'
+          type: 'success',
+          duration : 30000
         });
 
         navigate('/dashboard');
@@ -147,3 +148,4 @@ const OneOnOneMeeting = () => {
 };
 
 export default OneOnOneMeeting;
+
