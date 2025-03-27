@@ -30,7 +30,7 @@ const SignIn = ({ loggingIn, setLoggingIn }) => {
       navigate("/dashboard"); 
     } catch (error) {
       console.error("Sign In Error:", error.message);
-      alert("Sign In Failed: " + error.message);
+      alert("Sign In Failed: Invalid Credentials");
     } finally {
       setLoggingIn(false);
     }

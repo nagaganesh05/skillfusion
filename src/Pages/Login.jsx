@@ -173,7 +173,7 @@ const Login = () => {
           </Col>
           <Col md={6} className="px-4">
             <div className="text-center mb-3">
-              <Image src={logo} alt="logo" fluid style={{ maxWidth: "160px" }} />
+              <Image src={logo} alt="logo" fluid style={{ maxWidth: "160px", maxHeight:"auto"}} />
             </div>
             {showSignIn ? (
               <SignIn loggingIn={loggingIn} setLoggingIn={setLoggingIn} />

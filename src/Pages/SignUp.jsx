@@ -38,12 +38,12 @@ const SignUp = ({ loggingIn, setLoggingIn }) => {
       }
 
       dispatch(setUser({ uid, email, name }));
-      alert("Sign Up successful. Redirecting...");
+      alert("Sign Up successful. Redirecting to Dashboard");
       
       navigate("/login"); 
     } catch (error) {
       console.error("Sign Up Error:", error.message);
-      alert("Sign Up Failed: " + error.message);
+      alert("Sign Up Failed: credentials or missing");
     } finally {
       setLoggingIn(false);
     }
@@ -65,7 +65,7 @@ const SignUp = ({ loggingIn, setLoggingIn }) => {
       }
 
       dispatch(setUser({ uid, email, name: displayName }));
-      alert("Google Sign Up successful. Redirecting...");
+      alert("Google Sign Up successful. Redirecting to dashboard");
 
       navigate("/dashboard");
     } catch (error) {

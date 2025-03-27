@@ -36,7 +36,7 @@ const JoinMeeting = () => {
         if (!fetchedMeetings.empty) {
           const meeting = fetchedMeetings.docs[0].data();
           const isCreator = meeting.createdBy === user?.uid;
-          const today = new Date().toISOString().split('T')[0]; // Ensures ISO 8601 format
+          const today = new Date().toISOString().split('T')[0]; 
 
           if (meeting.meetingType === '1-on-1') {
             const invitedUser = meeting.invitedUsers[0];
