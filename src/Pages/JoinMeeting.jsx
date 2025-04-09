@@ -85,8 +85,8 @@ const JoinMeeting = () => {
 
   useEffect(() => {
     if (isAllowed && meetingContainerRef.current && user) {
-      const appId = 518910758;
-      const serverSecret = 'a375991731a4f5b62bd8600d686df4b4';
+      const appId = 2082330119; 
+      const serverSecret = '48b289b65a9a677794b94c878c0daeed';
 
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
         appId,

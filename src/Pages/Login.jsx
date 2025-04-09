@@ -163,11 +163,11 @@ const Login = () => {
   }
 
   return (
-    <Container className="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <Container className="d-flex justify-content-center  align-items-center vh-100 bg-light">
       <Card className="shadow-lg p-4 rounded-4 w-100" style={{ maxWidth: "960px" }}>
         <Row className="align-items-center">
-          <Col md={6} className="text-center mb-4 mb-md-0">
-            <Image src={animation} alt="animation" fluid style={{ maxHeight: "300px" }} />
+          <Col md={6} className="text-center mb-4 mb-md-0 ">
+            <Image src={animation}  alt="animation"  fluid style={{ maxHeight: "300px" }} />
             <h4 className="mt-3 fw-semibold text-primary">Welcome to SkillFusion</h4>
             <p className="text-muted px-3">Connect & Share Skills in 1:1 Live Sessions</p>
           </Col>
